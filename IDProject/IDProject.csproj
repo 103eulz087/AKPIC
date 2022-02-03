@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95B754A5-18AF-4B92-A5C3-3BA1D80969E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IDProject</RootNamespace>
+    <AssemblyName>IDProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.DebuggerVisualizers %282010%29">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.DebuggerVisualizers (2010).dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Fuzzy">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Fuzzy.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Genetic">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Genetic.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.Formats">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Imaging.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.IPPrototyper">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Imaging.IPPrototyper.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.MachineLearning">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.Lego">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Robotics.Lego.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.Surveyor">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Robotics.Surveyor.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.TeRK">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Robotics.TeRK.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.Kinect">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.VFW">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.VFW.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.Ximea">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Video.Ximea.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision">
+      <HintPath>D:\INSTALLERS\AForge Driver\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AAA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AAA.Designer.cs">
+      <DependentUpon>AAA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddChapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChapter.Designer.cs">
+      <DependentUpon>AddChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSerial.Designer.cs">
+      <DependentUpon>AddSerial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BBB.Designer.cs">
+      <DependentUpon>BBB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\OMEGABETA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\OMEGABETA.Designer.cs">
+      <DependentUpon>OMEGABETA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddActivities.Designer.cs">
+      <DependentUpon>AddActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddAnnouncement.Designer.cs">
+      <DependentUpon>AddAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddCorrectiveAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddCorrectiveAction.Designer.cs">
+      <DependentUpon>AddCorrectiveAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddDonation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddDonation.Designer.cs">
+      <DependentUpon>AddDonation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddExpense.Designer.cs">
+      <DependentUpon>AddExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterCertificates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterCertificates.Designer.cs">
+      <DependentUpon>ChapterCertificates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLedger.Designer.cs">
+      <DependentUpon>ChapterLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLiveTrends.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLiveTrends.Designer.cs">
+      <DependentUpon>ChapterLiveTrends.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterLogo.Designer.cs">
+      <DependentUpon>ChapterLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMeetingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMeetingDetails.Designer.cs">
+      <DependentUpon>ViewMeetingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMemberDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMemberDetails.Designer.cs">
+      <DependentUpon>ViewMemberDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMembersLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ViewMembersLedger.Designer.cs">
+      <DependentUpon>ViewMembersLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\BETANU_BACK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\BETANU_BACK.Designer.cs">
+      <DependentUpon>BETANU_BACK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Camera.cs" />
+    <Compile Include="CaptureImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaptureImage.Designer.cs">
+      <DependentUpon>CaptureImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\CertTemp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\CertTemp.Designer.cs">
+      <DependentUpon>CertTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\TestDevex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\TestDevex.Designer.cs">
+      <DependentUpon>TestDevex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\TestRep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterCertTemplate\TestRep.Designer.cs">
+      <DependentUpon>TestRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\AddAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\AddAttendance.Designer.cs">
+      <DependentUpon>AddAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterMainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ChapterMainDashboard.Designer.cs">
+      <DependentUpon>ChapterMainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\Meetings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\Meetings.Designer.cs">
+      <DependentUpon>Meetings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\Members.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\Members.Designer.cs">
+      <DependentUpon>Members.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterForms\ShowAttendees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterForms\ShowAttendees.Designer.cs">
+      <DependentUpon>ShowAttendees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChapterLogo.Designer.cs">
+      <DependentUpon>ChapterLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\HelperFunction.cs" />
+    <Compile Include="Classes\Object.cs" />
+    <Compile Include="Connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection.Designer.cs">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Database.cs" />
+    <Compile Include="Councils\ICCouncils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Councils\ICCouncils.Designer.cs">
+      <DependentUpon>ICCouncils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Councils\ICMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Councils\ICMembers.Designer.cs">
+      <DependentUpon>ICMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRetrieve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRetrieve.Designer.cs">
+      <DependentUpon>FormRetrieve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ICForm.Designer.cs">
+      <DependentUpon>ICForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\IDGenerator.cs" />
+    <Compile Include="ChapterIDTemplate\IDPIC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\IDPIC.Designer.cs">
+      <DependentUpon>IDPIC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\IDPrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\IDPrinting.Designer.cs">
+      <DependentUpon>IDPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PracticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PracticeForm.Designer.cs">
+      <DependentUpon>PracticeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\MeetingAttendanceDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\MeetingAttendanceDetails.Designer.cs">
+      <DependentUpon>MeetingAttendanceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\MeetingDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\MeetingDetails.Designer.cs">
+      <DependentUpon>MeetingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\MembersLedger.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\MembersLedger.Designer.cs">
+      <DependentUpon>MembersLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RetrieveMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetrieveMember.Designer.cs">
+      <DependentUpon>RetrieveMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\BETANU.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\BETANU.Designer.cs">
+      <DependentUpon>BETANU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\LAMBDAOMEGA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\LAMBDAOMEGA.Designer.cs">
+      <DependentUpon>LAMBDAOMEGA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\RHODELTA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\RHODELTA.Designer.cs">
+      <DependentUpon>RHODELTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\RHOGAMMAID.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChapterIDTemplate\RHOGAMMAID.Designer.cs">
+      <DependentUpon>RHOGAMMAID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SearchLookUpClass.cs" />
+    <Compile Include="Template\Certifcates\CertOfRecognition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\Certifcates\CertOfRecognition.Designer.cs">
+      <DependentUpon>CertOfRecognition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\SAMPLE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\SAMPLE.Designer.cs">
+      <DependentUpon>SAMPLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BETASIGMA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\BETASIGMA.Designer.cs">
+      <DependentUpon>BETASIGMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BETASIGMACERTREC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\BETASIGMACERTREC.Designer.cs">
+      <DependentUpon>BETASIGMACERTREC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\RHONU.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\RHONU.Designer.cs">
+      <DependentUpon>RHONU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\LAMBDAPHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\LAMBDAPHI.Designer.cs">
+      <DependentUpon>LAMBDAPHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\OMEGABETA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\OMEGABETA.Designer.cs">
+      <DependentUpon>OMEGABETA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePayment.Designer.cs">
+      <DependentUpon>UpdatePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePrintedID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePrintedID.Designer.cs">
+      <DependentUpon>UpdatePrintedID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Utilities.cs" />
+    <Compile Include="XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport3.Designer.cs">
+      <DependentUpon>XtraReport3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport4.Designer.cs">
+      <DependentUpon>XtraReport4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportIC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportIC.Designer.cs">
+      <DependentUpon>XtraReportIC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportICBack.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportICBack.Designer.cs">
+      <DependentUpon>XtraReportICBack.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddChapter.resx">
+      <DependentUpon>AddChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEvent.resx">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSerial.resx">
+      <DependentUpon>AddSerial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBB.resx">
+      <DependentUpon>BBB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaptureImage.resx">
+      <DependentUpon>CaptureImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterCertTemplate\OMEGABETA.resx">
+      <DependentUpon>OMEGABETA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterCertTemplate\CertTemp.resx">
+      <DependentUpon>CertTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterCertTemplate\TestDevex.resx">
+      <DependentUpon>TestDevex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterCertTemplate\TestRep.resx">
+      <DependentUpon>TestRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddActivities.resx">
+      <DependentUpon>AddActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddAnnouncement.resx">
+      <DependentUpon>AddAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddAttendance.resx">
+      <DependentUpon>AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddCorrectiveAction.resx">
+      <DependentUpon>AddCorrectiveAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddDonation.resx">
+      <DependentUpon>AddDonation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\AddExpense.resx">
+      <DependentUpon>AddExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ChapterCertificates.resx">
+      <DependentUpon>ChapterCertificates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ChapterLedger.resx">
+      <DependentUpon>ChapterLedger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ChapterLiveTrends.resx">
+      <DependentUpon>ChapterLiveTrends.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ChapterLogo.resx">
+      <DependentUpon>ChapterLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ChapterMainDashboard.resx">
+      <DependentUpon>ChapterMainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\Meetings.resx">
+      <DependentUpon>Meetings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\Members.resx">
+      <DependentUpon>Members.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ShowAttendees.resx">
+      <DependentUpon>ShowAttendees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ViewMeetingDetails.resx">
+      <DependentUpon>ViewMeetingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ViewMemberDetails.resx">
+      <DependentUpon>ViewMemberDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterForms\ViewMembersLedger.resx">
+      <DependentUpon>ViewMembersLedger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\BETANU_BACK.resx">
+      <DependentUpon>BETANU_BACK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterLogo.resx">
+      <DependentUpon>ChapterLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Councils\ICCouncils.resx">
+      <DependentUpon>ICCouncils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Councils\ICMembers.resx">
+      <DependentUpon>ICMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRetrieve.resx">
+      <DependentUpon>FormRetrieve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ICForm.resx">
+      <DependentUpon>ICForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\IDPIC.resx">
+      <DependentUpon>IDPIC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\IDPrinting.resx">
+      <DependentUpon>IDPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PracticeForm.resx">
+      <DependentUpon>PracticeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporting\MeetingAttendanceDetails.resx">
+      <DependentUpon>MeetingAttendanceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\MeetingDetails.resx">
+      <DependentUpon>MeetingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\MembersLedger.resx">
+      <DependentUpon>MembersLedger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetrieveMember.resx">
+      <DependentUpon>RetrieveMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\BETANU.resx">
+      <DependentUpon>BETANU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\LAMBDAOMEGA.resx">
+      <DependentUpon>LAMBDAOMEGA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\RHODELTA.resx">
+      <DependentUpon>RHODELTA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChapterIDTemplate\RHOGAMMAID.resx">
+      <DependentUpon>RHOGAMMAID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\Certifcates\CertOfRecognition.resx">
+      <DependentUpon>CertOfRecognition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\SAMPLE.resx">
+      <DependentUpon>SAMPLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\BETASIGMA.resx">
+      <DependentUpon>BETASIGMA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\BETASIGMACERTREC.resx">
+      <DependentUpon>BETASIGMACERTREC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\RHONU.resx">
+      <DependentUpon>RHONU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\LAMBDAPHI.resx">
+      <DependentUpon>LAMBDAPHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\OMEGABETA.resx">
+      <DependentUpon>OMEGABETA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePayment.resx">
+      <DependentUpon>UpdatePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePrintedID.resx">
+      <DependentUpon>UpdatePrintedID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogin.resx">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport3.resx">
+      <DependentUpon>XtraReport3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport4.resx">
+      <DependentUpon>XtraReport4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportIC.resx">
+      <DependentUpon>XtraReportIC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportICBack.resx">
+      <DependentUpon>XtraReportICBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10708863-elegant-vintage-background-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGroup_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Today_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Meeting_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFile_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActiveCustomersList_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Announcement_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Statistical_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MemoStyle %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Currency_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Demo_Report_WithInlinePreviewAction_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alpha_Kappa_Rho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh2_16x16 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomerRevenue_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_32x32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Outlook Post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\URL_History.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
